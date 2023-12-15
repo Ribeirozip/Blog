@@ -1,8 +1,5 @@
 package com.example.MBS.models;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,4 +17,8 @@ public class Postagem {
     private String image_Post;
     private String conteudo_Post;
     private Date data_Post;
+
+    @ManyToOne
+    @JoinColumn(name = "Usuario_id_User")
+    private Usuario usuario;
 }
